@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中式英语词典</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif; background: #f5f6f8; color: #333; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 20px 16px 40px; }
+  header { text-align: center; padding: 28px 0 8px; }
+  header h1 { font-size: 26px; font-weight: 700; color: #1f2937; letter-spacing: 1px; }
+  header .sub { font-size: 13px; color: #9ca3af; margin-top: 6px; }
+  .stats { display: flex; justify-content: center; gap: 28px; margin: 14px 0 22px; flex-wrap: wrap; }
+  .stats span { font-size: 13px; color: #6b7280; }
+  .stats b { color: #1f2937; font-size: 15px; margin-left: 4px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.05); padding: 18px 20px; }
+  .searchbar { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .searchbar input { flex: 1; height: 44px; border: 1px solid #d1d5db; border-radius: 8px; padding: 0 14px; font-size: 15px; outline: none; }
+  .searchbar input:focus { border-color: #2563eb; }
+  .mode-btn { height: 44px; padding: 0 16px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; color: #4b5563; font-size: 14px; cursor: pointer; }
+  .mode-btn.on { background: #2563eb; border-color: #2563eb; color: #fff; }
+  .hint { font-size: 12px; color: #9ca3af; margin-bottom: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { background: #f9fafb; color: #6b7280; font-weight: 600; text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f1f2f4; vertical-align: top; word-break: break-word; }
+  tr:hover td { background: #fafbfc; }
+  .tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 10px; margin-right: 6px; white-space: nowrap; }
+  .tag.char { background: #eff6ff; color: #1d4ed8; }
+  .tag.word { background: #f0fdf4; color: #15803d; }
+  .tag.ce { background: #fffbeb; color: #b45309; }
+  .tag.en { background: #fef2f2; color: #b91c1c; }
+  .pinyin { color: #6b7280; font-size: 12px; }
+  .empty { text-align: center; color: #9ca3af; padding: 36px 0; font-size: 14px; }
+  .section-title { font-size: 15px; font-weight: 700; color: #1f2937; margin: 6px 0 12px; }
+  .ce-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 720px) { .ce-grid { grid-template-columns: 1fr; } }
+  .ce-item { border: 1px solid #f1f2f4; border-radius: 8px; padding: 10px 12px; background: #fff; }
+  .ce-item .ce-word { font-weight: 700; color: #1f2937; font-size: 14px; }
+  .ce-item .ce-zh { color: #6b7280; font-size: 12.5px; margin: 2px 0 4px; }
+  .ce-item .ce-line { font-size: 12.5px; color: #4b5563; line-height: 1.65; }
+  .ce-item .ce-origin { font-size: 12px; color: #9ca3af; margin-top: 5px; }
+  .group-label { font-size: 13px; font-weight: 600; color: #6b7280; margin: 16px 0 8px; }
+  footer { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 24px; line-height: 1.7; }
+  .notice { font-size: 12px; color: #9ca3af; background: #fafafa; border: 1px dashed #e5e7eb; border-radius: 6px; padding: 8px 12px; margin-top: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>中式英语词典</h1>
+    <div class="sub">Chinglish Dictionary · 汉字 / 常用词 / 中式英语词条 / 英语常用词 双向查询</div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="card" style="margin-bottom:14px;">
+    <div class="searchbar">
+      <button class="mode-btn on" id="modeZh" onclick="setMode('zh')">查中文</button>
+      <button class="mode-btn" id="modeEn" onclick="setMode('en')">查英文</button>
+      <input id="q" type="text" placeholder="输入汉字、词语或英文单词…" autocomplete="off" oninput="doSearch()">
+    </div>
+    <div class="hint" id="hint"></div>
+    <div id="results"></div>
+  </div>
+
+  <div class="card" id="cePanel">
+    <div class="section-title">中式英语特色词条</div>
+    <div id="ceList"></div>
+  </div>
+
+  <div class="notice">
+    数据说明：字层 6500（《通用规范汉字表》一二级）+ Unihan 释义；词层高频 3 万（CC-CEDICT，按词频截取）；特色层 38 条人工整理（来源见各条）；英语层为 COCA 前 20200 中未被中文侧覆盖的常用词。授权：Unihan 宽松许可、CC-CEDICT 为 CC BY-SA 4.0（衍生须开源共享）、COCA 词表来自开源整理版。本工具用于语言研究参考，非权威词典。
+  </div>
+
+  <footer>中式英语词典 v0.2 · 数据生成 2026-10-11 · 本地离线使用</footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+var D = window.DICT_DATA || null;
+var mode = "zh";
+
+function setMode(m) {
+  mode = m;
+  document.getElementById("modeZh").className = "mode-btn" + (m === "zh" ? " on" : "");
+  document.getElementById("modeEn").className = "mode-btn" + (m === "en" ? " on" : "");
+  document.getElementById("q").placeholder = m === "zh" ? "输入汉字、词语…" : "输入英文单词…";
+  doSearch();
+}
+
+function esc(s) {
+  return (s || "").replace(/[&<>"']/g, function (c) {
+    return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c];
+  });
+}
+
+function renderStats() {
+  if (!D) return;
+  var s = document.getElementById("stats");
+  s.innerHTML =
+    '<span>汉字 <b>' + D.meta.char_count.toLocaleString() + '</b></span>' +
+    '<span>常用词 <b>' + D.meta.word_count.toLocaleString() + '</b></span>' +
+    '<span>特色词条 <b>' + D.meta.chinglish_count + '</b></span>' +
+    '<span>英语常用词 <b>' + D.meta.english_count.toLocaleString() + '</b></span>';
+}
+
+function rowHtml(tag, tagClass, main, sub, right) {
+  return '<tr><td style="white-space:nowrap;"><span class="tag ' + tagClass + '">' + tag + '</span><b>' + esc(main) + '</b>' +
+    (sub ? '<div class="pinyin">' + esc(sub) + '</div>' : '') + '</td>' +
+    '<td>' + esc(right || "") + '</td></tr>';
+}
+
+function doSearch() {
+  if (!D) return;
+  var q = document.getElementById("q").value.trim();
+  var box = document.getElementById("results");
+  var hint = document.getElementById("hint");
+  if (!q) { box.innerHTML = '<div class="empty">输入关键词开始查询</div>'; hint.textContent = ""; return; }
+
+  if (mode === "zh") {
+    hint.textContent = "中文查询：字精确匹配 + 词精确匹配 + 特色词条中文包含";
+    var rows = [];
+    // 字
+    for (var i = 0; i < D.chars.length; i++) {
+      var c = D.chars[i];
+      if (c.char === q) {
+        rows.push(rowHtml("字", "char", c.char, c.pinyin || "（多音字）", (c.english || "释义待补") + (c.level === 1 ? " · 一级" : " · 二级")));
+        break;
+      }
+    }
+    // 词
+    var hitWords = 0;
+    for (var j = 0; j < D.words.length; j++) {
+      var w = D.words[j];
+      if (w.word === q) {
+        rows.push(rowHtml("词", "word", w.word, w.pinyin, w.english + (w.freq ? " · 词频" + w.freq.toLocaleString() : "")));
+        if (++hitWords >= 20) break;
+      }
+    }
+    // 特色
+    for (var k = 0; k < D.chinglish.length; k++) {
+      var ce = D.chinglish[k];
+      if (ce.chinese.indexOf(q) >= 0) {
+        rows.push(rowHtml("特色", "ce", ce.chinglish, ce.chinese, ce.standard + (ce.origin ? " ｜" + ce.origin : "")));
+      }
+    }
+    box.innerHTML = rows.length ? '<table><thead><tr><th style="width:210px;">词条</th><th>释义 / 说明</th></tr></thead><tbody>' + rows.join("") + '</tbody></table>'
+      : '<div class="empty">未找到「' + esc(q) + '」<br>（字层 6500 + 词层高频 3 万范围内）</div>';
+  } else {
+    hint.textContent = "英文查询：英文释义包含匹配 + 英语常用词精确匹配 + 特色词条精确匹配";
+    var ql = q.toLowerCase();
+    var rows2 = [];
+    var rx = new RegExp("(^|[^a-z'])(" + ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")([^a-z']|$)", "i");
+    // 词层英文释义包含
+    var cnt = 0;
+    for (var m = 0; m < D.words.length && cnt < 60; m++) {
+      var w2 = D.words[m];
+      if (rx.test(w2.english)) {
+        rows2.push(rowHtml("词", "word", w2.word, w2.pinyin, w2.english));
+        cnt++;
+      }
+    }
+    // 英语层精确
+    for (var n = 0; n < D.english.length; n++) {
+      var e = D.english[n];
+      if (e.word.toLowerCase() === ql) {
+        rows2.push(rowHtml("英语", "en", e.word, "COCA #" + e.rank, e.chinese || "释义待补"));
+      }
+    }
+    // 特色层精确
+    for (var p = 0; p < D.chinglish.length; p++) {
+      var ce2 = D.chinglish[p];
+      if (ce2.chinglish.toLowerCase() === ql || ce2.chinglish.toLowerCase().indexOf(ql) >= 0) {
+        rows2.push(rowHtml("特色", "ce", ce2.chinglish, ce2.chinese, ce2.standard));
+      }
+    }
+    box.innerHTML = rows2.length ? '<table><thead><tr><th style="width:210px;">词条</th><th>英文释义 / 中文</th></tr></thead><tbody>' + rows2.join("") + '</tbody></table>'
+      : '<div class="empty">未在释义与常用词中找到「' + esc(q) + '」</div>';
+  }
+}
+
+function renderChinglish() {
+  if (!D) return;
+  var labels = {adopted: "已入英语", calque: "直译借入", net: "网络流行", sign: "标语误译"};
+  var groups = {adopted: [], calque: [], net: [], sign: []};
+  for (var i = 0; i < D.chinglish.length; i++) {
+    var ce = D.chinglish[i];
+    (groups[ce.status] || groups.net).push(ce);
+  }
+  var html = "";
+  var order = ["adopted", "calque", "net", "sign"];
+  for (var g = 0; g < order.length; g++) {
+    var key = order[g], list = groups[key];
+    if (!list.length) continue;
+    html += '<div class="group-label">' + (labels[key] || key) + '（' + list.length + '）</div><div class="ce-grid">';
+    for (var j = 0; j < list.length; j++) {
+      var e = list[j];
+      html += '<div class="ce-item"><div class="ce-word">' + esc(e.chinglish) + '</div>' +
+        '<div class="ce-zh">' + esc(e.chinese) + ' · ' + esc(e.literal) + '</div>' +
+        '<div class="ce-line"><b>规范译：</b>' + esc(e.standard) + '</div>' +
+        (e.example ? '<div class="ce-line"><b>例：</b>' + esc(e.example) + '</div>' : "") +
+        '<div class="ce-origin">' + esc(e.origin) + '</div></div>';
+    }
+    html += '</div>';
+  }
+  document.getElementById("ceList").innerHTML = html;
+}
+
+function init() {
+  renderStats();
+  renderChinglish();
+  var hint = document.getElementById("hint");
+  if (!D) { hint.textContent = "数据加载失败：请确认 data.js 与本页面在同一目录。"; return; }
+  doSearch();
+}
+init();
+</script>
+</body>
+</html>
