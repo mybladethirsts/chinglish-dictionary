@@ -1,0 +1,351 @@
+{
+ "meta": {
+  "name": "中式英语词典-特色层",
+  "version": "0.1",
+  "count": 38
+ },
+ "entries": [
+  {
+   "chinglish": "long time no see",
+   "chinese": "好久不见",
+   "literal": "长时间没见",
+   "standard": "It's been a long time / Long time no see (已为英语习语)",
+   "status": "adopted",
+   "origin": "19世纪中国皮钦英语（洋泾浜），1890年代在美国英语中出现，OED 有记录",
+   "example": "Hi Bob! Long time no see."
+  },
+  {
+   "chinglish": "no can do",
+   "chinese": "不能做/做不到",
+   "literal": "不 能 做",
+   "standard": "I can't do it / That can't be done",
+   "status": "adopted",
+   "origin": "中国皮钦英语，直译“不能做”，已被英语吸收为习语",
+   "example": "Sorry, no can do."
+  },
+  {
+   "chinglish": "look-see",
+   "chinese": "看一看",
+   "literal": "看-见",
+   "standard": "to take a look / to inspect",
+   "status": "adopted",
+   "origin": "中国皮钦英语（look 看 + see 见），OED 归源于中国皮钦英语",
+   "example": "Let's have a look-see at the damage."
+  },
+  {
+   "chinglish": "chop chop",
+   "chinese": "快点",
+   "literal": "快快",
+   "standard": "hurry up / quickly",
+   "status": "adopted",
+   "origin": "中国皮钦英语（粤语“快快”），已进入英语口语",
+   "example": "Chop chop! We're going to be late."
+  },
+  {
+   "chinglish": "kowtow",
+   "chinese": "叩头",
+   "literal": "叩头",
+   "standard": "to kneel and touch the ground with the forehead",
+   "status": "adopted",
+   "origin": "粤语借词，进入英语已 200 余年，OED 收录",
+   "example": "He refused to kowtow to authority."
+  },
+  {
+   "chinglish": "typhoon",
+   "chinese": "台风",
+   "literal": "台风",
+   "standard": "typhoon (已为英语标准词)",
+   "status": "adopted",
+   "origin": "多源词，其中一路源自粤语/中文“台风”，经皮钦英语进入英语",
+   "example": "The typhoon made landfall overnight."
+  },
+  {
+   "chinglish": "lose face",
+   "chinese": "丢面子",
+   "literal": "丢 脸/面子",
+   "standard": "to lose face / to be humiliated",
+   "status": "adopted",
+   "origin": "中文“丢面子”直译（calque），已被英语吸收为固定搭配",
+   "example": "He lost face in front of his colleagues."
+  },
+  {
+   "chinglish": "paper tiger",
+   "chinese": "纸老虎",
+   "literal": "纸 老虎",
+   "standard": "paper tiger (外强中干者)",
+   "status": "adopted",
+   "origin": "中文“纸老虎”直译，1950年代进入英语，主流词典收录",
+   "example": "The regime was dismissed as a paper tiger."
+  },
+  {
+   "chinglish": "gung ho",
+   "chinese": "工合",
+   "literal": "工业合作社",
+   "standard": "gung-ho (狂热投入/干劲十足)",
+   "status": "adopted",
+   "origin": "“工业合作社”缩略音译，二战期间进入美式英语",
+   "example": "The whole team is gung-ho about the project."
+  },
+  {
+   "chinglish": "brainwashing",
+   "chinese": "洗脑",
+   "literal": "洗 脑",
+   "standard": "brainwashing (已为英语标准词)",
+   "status": "adopted",
+   "origin": "中文“洗脑”直译，1950年代经朝鲜战争报道进入英语",
+   "example": "It sounds like brainwashing."
+  },
+  {
+   "chinglish": "kung fu",
+   "chinese": "功夫",
+   "literal": "功夫",
+   "standard": "kung fu (已为英语标准词)",
+   "status": "adopted",
+   "origin": "中文音译借词，主流英语词典收录",
+   "example": "He practices kung fu every morning."
+  },
+  {
+   "chinglish": "tofu",
+   "chinese": "豆腐",
+   "literal": "豆腐",
+   "standard": "tofu (已为英语标准词)",
+   "status": "adopted",
+   "origin": "中文音译借词，主流英语词典收录",
+   "example": "I'll have the mapo tofu."
+  },
+  {
+   "chinglish": "feng shui",
+   "chinese": "风水",
+   "literal": "风 水",
+   "standard": "feng shui (已为英语标准词)",
+   "status": "adopted",
+   "origin": "中文音译借词，主流英语词典收录",
+   "example": "They hired a feng shui master."
+  },
+  {
+   "chinglish": "guanxi",
+   "chinese": "关系",
+   "literal": "关系",
+   "standard": "guanxi (中国式人际关系网络)",
+   "status": "adopted",
+   "origin": "中文音译借词，英语媒介报道中国事务时常用",
+   "example": "In China, guanxi matters a lot in business."
+  },
+  {
+   "chinglish": "mahjong",
+   "chinese": "麻将",
+   "literal": "麻将",
+   "standard": "mahjong (已为英语标准词)",
+   "status": "adopted",
+   "origin": "中文音译借词，主流英语词典收录",
+   "example": "The grandparents play mahjong every evening."
+  },
+  {
+   "chinglish": "dim sum",
+   "chinese": "点心",
+   "literal": "点心",
+   "standard": "dim sum (已为英语标准词，粤语借词)",
+   "status": "adopted",
+   "origin": "粤语“点心”音译借词",
+   "example": "We went for dim sum on Sunday."
+  },
+  {
+   "chinglish": "lychee",
+   "chinese": "荔枝",
+   "literal": "荔枝",
+   "standard": "lychee (已为英语标准词)",
+   "status": "adopted",
+   "origin": "中文音译借词（经粤语），主流英语词典收录",
+   "example": "Lychees are in season now."
+  },
+  {
+   "chinglish": "chow mein",
+   "chinese": "炒面",
+   "literal": "炒 面",
+   "standard": "chow mein (已为英语标准词，粤语借词)",
+   "status": "adopted",
+   "origin": "粤语“炒面”音译借词，主流英语词典收录",
+   "example": "I ordered chicken chow mein."
+  },
+  {
+   "chinglish": "wonton",
+   "chinese": "馄饨",
+   "literal": "馄饨",
+   "standard": "wonton (已为英语标准词，粤语借词)",
+   "status": "adopted",
+   "origin": "粤语“云吞/馄饨”音译借词",
+   "example": "A bowl of wonton soup, please."
+  },
+  {
+   "chinglish": "bok choy",
+   "chinese": "白菜",
+   "literal": "白菜",
+   "standard": "bok choy (已为英语标准词，粤语借词)",
+   "status": "adopted",
+   "origin": "粤语“白菜”音译借词",
+   "example": "Stir-fry the bok choy with garlic."
+  },
+  {
+   "chinglish": "add oil",
+   "chinese": "加油",
+   "literal": "加 油",
+   "standard": "keep going / go for it / come on",
+   "status": "adopted",
+   "origin": "香港英语/中文直译“加油”，2018年前后获主流英语词典收录，用于鼓励",
+   "example": "Add oil! You can pass the exam."
+  },
+  {
+   "chinglish": "people mountain people sea",
+   "chinese": "人山人海",
+   "literal": "人 山 人 海",
+   "standard": "packed / a sea of people / crowded",
+   "status": "net",
+   "origin": "成语字面直译，网络流行梗，海外媒体偶引用",
+   "example": "During the holiday, the station was people mountain people sea."
+  },
+  {
+   "chinglish": "good good study, day day up",
+   "chinese": "好好学习，天天向上",
+   "literal": "好好 学习，天天 向上",
+   "standard": "Study hard and make progress every day",
+   "status": "net",
+   "origin": "中文口号“好好学习，天天向上”的直译网络梗",
+   "example": "Good good study, day day up! (网络流传的直译梗)"
+  },
+  {
+   "chinglish": "you can you up, no can no BB",
+   "chinese": "你行你上，不行别哔哔",
+   "literal": "你 行 你 上，不 行 别 哔哔",
+   "standard": "Put up or shut up",
+   "status": "net",
+   "origin": "网络流行直译，Urban Dictionary 收录",
+   "example": "You can you up, no can no BB."
+  },
+  {
+   "chinglish": "give you some color to see see",
+   "chinese": "给你点颜色看看",
+   "literal": "给 你 一些 颜色 看 看",
+   "standard": "Teach you a lesson / I'll show you",
+   "status": "net",
+   "origin": "“颜色看看”逐字直译网络梗",
+   "example": "If you keep this up, I'll give you some color to see see."
+  },
+  {
+   "chinglish": "horse horse tiger tiger",
+   "chinese": "马马虎虎",
+   "literal": "马 马 虎 虎",
+   "standard": "so-so / mediocre",
+   "status": "net",
+   "origin": "“马马虎虎”逐字直译网络梗",
+   "example": "How was the movie? Horse horse tiger tiger."
+  },
+  {
+   "chinglish": "no three no four",
+   "chinese": "不三不四",
+   "literal": "不 三 不 四",
+   "standard": "shady / dubious / neither fish nor fowl",
+   "status": "net",
+   "origin": "“不三不四”逐字直译网络梗",
+   "example": "He hangs out with no three no four people."
+  },
+  {
+   "chinglish": "we two who and who",
+   "chinese": "咱俩谁跟谁",
+   "literal": "我们 俩 谁 和 谁",
+   "standard": "Between us, no need to be so formal",
+   "status": "net",
+   "origin": "“谁跟谁”逐字直译网络梗",
+   "example": "Don't mention it — we two who and who!"
+  },
+  {
+   "chinglish": "open door see mountain",
+   "chinese": "开门见山",
+   "literal": "开 门 见 山",
+   "standard": "get straight to the point",
+   "status": "net",
+   "origin": "成语逐字直译网络梗",
+   "example": "Let's open door see mountain: the budget is too high."
+  },
+  {
+   "chinglish": "walk one step see one step",
+   "chinese": "走一步看一步",
+   "literal": "走 一步 看 一步",
+   "standard": "take it one step at a time / play it by ear",
+   "status": "net",
+   "origin": "俗语逐字直译网络梗",
+   "example": "We'll walk one step see one step."
+  },
+  {
+   "chinglish": "six six six",
+   "chinese": "666",
+   "literal": "六 六 六",
+   "standard": "Awesome! / Nice one! / Impressive",
+   "status": "net",
+   "origin": "数字谐音“溜”，网络流行，直播文化扩散",
+   "example": "Nice moves — six six six!"
+  },
+  {
+   "chinglish": "small case",
+   "chinese": "小意思/小菜一碟",
+   "literal": "小 意思",
+   "standard": "a piece of cake / no big deal",
+   "status": "net",
+   "origin": "“小意思”网络直译，东南亚/中文社区口语",
+   "example": "This math problem? Small case!"
+  },
+  {
+   "chinglish": "yellow banana",
+   "chinese": "香蕉人（讽刺）",
+   "literal": "香蕉 人",
+   "standard": "banana (yellow outside, white inside)",
+   "status": "net",
+   "origin": "“香蕉人”直译梗，指认同西化的华人（贬义，慎用）",
+   "example": ""
+  },
+  {
+   "chinglish": "deformed man toilet",
+   "chinese": "残疾人厕所",
+   "literal": "变形人 厕所",
+   "standard": "Accessible restroom / Disabled toilet",
+   "status": "sign",
+   "origin": "历史标语直译失误，公共标识 Chinglish 经典案例",
+   "example": ""
+  },
+  {
+   "chinglish": "carefully slip",
+   "chinese": "小心地滑",
+   "literal": "小心地 滑",
+   "standard": "Caution: Wet Floor",
+   "status": "sign",
+   "origin": "“小心地滑”逐字直译，断句歧义经典案例",
+   "example": ""
+  },
+  {
+   "chinglish": "slip carefully",
+   "chinese": "小心地滑",
+   "literal": "小心地 滑",
+   "standard": "Caution: Wet Floor",
+   "status": "sign",
+   "origin": "“小心地滑”另一常见误译（词性歧义）",
+   "example": ""
+  },
+  {
+   "chinglish": "one-way street",
+   "chinese": "单行道",
+   "literal": "一 路 街",
+   "standard": "One-Way Street / One Way",
+   "status": "sign",
+   "origin": "“单行道”字面误译案例",
+   "example": ""
+  },
+  {
+   "chinglish": "welcome to visit again",
+   "chinese": "欢迎再来",
+   "literal": "欢迎 来 参观 再次",
+   "standard": "Please come again / Hope to see you again",
+   "status": "sign",
+   "origin": "“欢迎再来”直译，海外餐厅/商店常见，已成半可接受表达",
+   "example": ""
+  }
+ ]
+}
