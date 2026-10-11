@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 原始数据（第三方上游可下载，不上传仓库）
+data/raw/
+
+# 临时/内部文件
+data/out/delivery_list.json
+*.log

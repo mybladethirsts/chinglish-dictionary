@@ -1,0 +1,17 @@
+本仓库数据文件（data/ 目录下所有产物，包括但不限于 char_layer / word_layer / chinglish_layer / english_layer / master_core.json 及 web/data.js 中的数据）采用
+
+Creative Commons Attribution-ShareAlike 4.0 International（CC BY-SA 4.0）
+
+许可。原因：数据含 CC-CEDICT 衍生内容，按 CC-CEDICT 的许可要求，衍生公开数据必须保持同一许可共享。
+
+- 官方文本：https://creativecommons.org/licenses/by-sa/4.0/legalcode
+- 简体中文摘要：https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans
+
+署名（Attribution）：数据整理 吴伯颜（mybladethirsts）；原始数据源包括：
+- CC-CEDICT（https://cc-cedict.org/，CC BY-SA 4.0）
+- Unicode Unihan Database（Unicode License）
+- 《通用规范汉字表》（2013，政府公开文件）
+- COCA 20000 开源整理版 llt22/coca-vocabulary-20000
+- jieba 词频（MIT）
+
+代码与网页工具（web/ 与 scripts/ 下非数据文件）另见根目录 LICENSE（MIT）。
