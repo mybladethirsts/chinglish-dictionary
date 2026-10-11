@@ -3,9 +3,13 @@ __pycache__/
 *.pyc
 *.pyo
 
+# AppleDouble 元数据
+._*
+
 # 原始数据（第三方上游可下载，不上传仓库）
 data/raw/
 
 # 临时/内部文件
 data/out/delivery_list.json
 *.log
+scripts/unpack_log.txt
