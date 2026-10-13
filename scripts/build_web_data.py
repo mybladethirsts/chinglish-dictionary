@@ -26,18 +26,26 @@ chinglish = json.load(open(os.path.join(OUT, "chinglish_layer.json"), encoding="
 english = json.load(open(os.path.join(OUT, "english_layer.json"), encoding="utf-8"))["words"]
 print("english layer:", len(english))
 
-# 5) 组装 data.js
+# 5) 句型层（中文语序 ↔ 标准英语）
+sent = json.load(open(os.path.join(OUT, "sentence_layer.json"), encoding="utf-8"))
+sentences = sent["entries"]
+patterns = sent["patterns"]
+print("sentence layer:", len(sentences), "entries /", len(patterns), "patterns")
+
+# 6) 组装 data.js
 meta = {
     "name": "中式英语词典（Chinglish Dictionary）",
-    "version": "0.2",
+    "version": "0.3",
     "char_count": len(chars),
     "word_count": len(top_words),
     "chinglish_count": len(chinglish),
     "english_count": len(english),
-    "built": "2026-10-11",
+    "sentence_count": len(sentences),
+    "built": "2026-10-13",
 }
 data = {"meta": meta, "chars": chars, "words": top_words,
-        "chinglish": chinglish, "english": english}
+        "chinglish": chinglish, "english": english,
+        "patterns": patterns, "sentences": sentences}
 
 js = "/* 中式英语词典 web 数据（由 build_web_data.py 生成） */\n"
 js += "window.DICT_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n"
