@@ -30,6 +30,15 @@
   .tag.word { background: #f0fdf4; color: #15803d; }
   .tag.ce { background: #fffbeb; color: #b45309; }
   .tag.en { background: #fef2f2; color: #b91c1c; }
+  .tag.st { background: #f5f3ff; color: #6d28d9; }
+  .st-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 720px) { .st-grid { grid-template-columns: 1fr; } }
+  .st-item { border: 1px solid #f1f2f4; border-radius: 8px; padding: 10px 12px; background: #fff; }
+  .st-item .st-zh { font-weight: 700; color: #1f2937; font-size: 14px; }
+  .st-item .st-ce { margin: 3px 0; font-size: 13px; color: #6d28d9; font-weight: 600; }
+  .st-item .st-en { font-size: 13px; color: #15803d; }
+  .st-item .st-note { font-size: 12px; color: #9ca3af; margin-top: 4px; line-height: 1.5; }
+  .st-pattern { font-size: 12.5px; color: #6b7280; margin-bottom: 8px; }
   .pinyin { color: #6b7280; font-size: 12px; }
   .empty { text-align: center; color: #9ca3af; padding: 36px 0; font-size: 14px; }
   .section-title { font-size: 15px; font-weight: 700; color: #1f2937; margin: 6px 0 12px; }
@@ -49,7 +58,7 @@
 <div class="wrap">
   <header>
     <h1>中式英语词典</h1>
-    <div class="sub">Chinglish Dictionary · 汉字 / 常用词 / 中式英语词条 / 英语常用词 双向查询</div>
+    <div class="sub">Chinglish Dictionary · 汉字 / 常用词 / 中式英语词条 / 英语常用词 / 句型对照 双向查询</div>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -63,16 +72,21 @@
     <div id="results"></div>
   </div>
 
+  <div class="card" id="stPanel" style="margin-bottom:14px;">
+    <div class="section-title">句型对照库：中文语序 ↔ 标准英语 <span style="font-size:12px;color:#9ca3af;font-weight:400;">· For English speakers：同一句英文，中文语序怎么说</span></div>
+    <div id="stList"></div>
+  </div>
+
   <div class="card" id="cePanel">
     <div class="section-title">中式英语特色词条</div>
     <div id="ceList"></div>
   </div>
 
   <div class="notice">
-    数据说明：字层 6500（《通用规范汉字表》一二级）+ Unihan 释义；词层高频 3 万（CC-CEDICT，按词频截取）；特色层 38 条人工整理（来源见各条）；英语层为 COCA 前 20200 中未被中文侧覆盖的常用词。授权：Unihan 宽松许可、CC-CEDICT 为 CC BY-SA 4.0（衍生须开源共享）、COCA 词表来自开源整理版。本工具用于语言研究参考，非权威词典。
+    数据说明：字层 6500（《通用规范汉字表》一二级）+ Unihan 释义；词层高频 3 万（CC-CEDICT，按词频截取）；特色层 38 条人工整理（来源见各条）；英语层为 COCA 前 20200 中未被中文侧覆盖的常用词；句型层 180 条人工整理（15 类中文语序模式，面向英语母语者展示「同一句英文用中文语序怎么说」）。授权：Unihan 宽松许可、CC-CEDICT 为 CC BY-SA 4.0（衍生须开源共享）、COCA 词表来自开源整理版。本工具用于语言研究参考，非权威词典。
   </div>
 
-  <footer>中式英语词典 v0.2 · 数据生成 2026-10-11 · 本地离线使用</footer>
+  <footer>中式英语词典 v0.3 · 数据生成 2026-10-13 · 本地离线使用</footer>
 </div>
 
 <script src="data.js"></script>
@@ -101,7 +115,8 @@ function renderStats() {
     '<span>汉字 <b>' + D.meta.char_count.toLocaleString() + '</b></span>' +
     '<span>常用词 <b>' + D.meta.word_count.toLocaleString() + '</b></span>' +
     '<span>特色词条 <b>' + D.meta.chinglish_count + '</b></span>' +
-    '<span>英语常用词 <b>' + D.meta.english_count.toLocaleString() + '</b></span>';
+    '<span>英语常用词 <b>' + D.meta.english_count.toLocaleString() + '</b></span>' +
+    '<span>句型对照 <b>' + (D.meta.sentence_count || 0) + '</b></span>';
 }
 
 function rowHtml(tag, tagClass, main, sub, right) {
@@ -115,10 +130,12 @@ function doSearch() {
   var q = document.getElementById("q").value.trim();
   var box = document.getElementById("results");
   var hint = document.getElementById("hint");
+  var pmap = {};
+  for (var pi = 0; pi < D.patterns.length; pi++) pmap[D.patterns[pi].id] = D.patterns[pi];
   if (!q) { box.innerHTML = '<div class="empty">输入关键词开始查询</div>'; hint.textContent = ""; return; }
 
   if (mode === "zh") {
-    hint.textContent = "中文查询：字精确匹配 + 词精确匹配 + 特色词条中文包含";
+    hint.textContent = "中文查询：字精确匹配 + 词精确匹配 + 特色词条包含 + 句型中文原文匹配";
     var rows = [];
     // 字
     for (var i = 0; i < D.chars.length; i++) {
@@ -144,10 +161,20 @@ function doSearch() {
         rows.push(rowHtml("特色", "ce", ce.chinglish, ce.chinese, ce.standard + (ce.origin ? " ｜" + ce.origin : "")));
       }
     }
+    // 句型：中文原文或模式名包含
+    var stCnt = 0;
+    for (var si = 0; si < D.sentences.length && stCnt < 30; si++) {
+      var st = D.sentences[si];
+      var pn = pmap[st.pattern] || {};
+      if (st.zh.indexOf(q) >= 0 || (pn.name_zh || "").indexOf(q) >= 0) {
+        rows.push(rowHtml("句型", "st", st.zh, pn.name_zh || st.pattern, "中文语序：" + st.chinglish + " ｜标准：" + st.standard));
+        stCnt++;
+      }
+    }
     box.innerHTML = rows.length ? '<table><thead><tr><th style="width:210px;">词条</th><th>释义 / 说明</th></tr></thead><tbody>' + rows.join("") + '</tbody></table>'
       : '<div class="empty">未找到「' + esc(q) + '」<br>（字层 6500 + 词层高频 3 万范围内）</div>';
   } else {
-    hint.textContent = "英文查询：英文释义包含匹配 + 英语常用词精确匹配 + 特色词条精确匹配";
+    hint.textContent = "英文查询：英文释义包含匹配 + 英语常用词精确匹配 + 特色词条精确匹配 + 句型标准句匹配";
     var ql = q.toLowerCase();
     var rows2 = [];
     var rx = new RegExp("(^|[^a-z'])(" + ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")([^a-z']|$)", "i");
@@ -172,6 +199,16 @@ function doSearch() {
       var ce2 = D.chinglish[p];
       if (ce2.chinglish.toLowerCase() === ql || ce2.chinglish.toLowerCase().indexOf(ql) >= 0) {
         rows2.push(rowHtml("特色", "ce", ce2.chinglish, ce2.chinese, ce2.standard));
+      }
+    }
+    // 句型：标准句/直译句/模式名匹配
+    var stCnt2 = 0;
+    for (var si2 = 0; si2 < D.sentences.length && stCnt2 < 30; si2++) {
+      var st2 = D.sentences[si2];
+      var pn2 = pmap[st2.pattern] || {};
+      if (rx.test(st2.standard) || rx.test(st2.chinglish) || (pn2.name_en || "").toLowerCase().indexOf(ql) >= 0) {
+        rows2.push(rowHtml("句型", "st", st2.standard, st2.zh, "中文语序直译：" + st2.chinglish + "（" + (pn2.name_en || st2.pattern) + "）"));
+        stCnt2++;
       }
     }
     box.innerHTML = rows2.length ? '<table><thead><tr><th style="width:210px;">词条</th><th>英文释义 / 中文</th></tr></thead><tbody>' + rows2.join("") + '</tbody></table>'
@@ -206,9 +243,38 @@ function renderChinglish() {
   document.getElementById("ceList").innerHTML = html;
 }
 
+function renderSentences() {
+  if (!D || !D.sentences) return;
+  var pmap = {};
+  for (var i = 0; i < D.patterns.length; i++) pmap[D.patterns[i].id] = D.patterns[i];
+  var groups = {};
+  for (var j = 0; j < D.sentences.length; j++) {
+    var s = D.sentences[j];
+    (groups[s.pattern] = groups[s.pattern] || []).push(s);
+  }
+  var html = "";
+  var ids = Object.keys(groups);
+  for (var k = 0; k < ids.length; k++) {
+    var pid = ids[k], p = pmap[pid] || {id: pid, name_zh: pid, name_en: "", desc_en: ""};
+    var list = groups[pid];
+    html += '<div class="group-label">' + esc(p.name_zh) + ' · ' + esc(p.name_en) + '（' + list.length + '）</div>' +
+      '<div class="st-pattern">' + esc(p.desc_en) + '</div><div class="st-grid">';
+    for (var m = 0; m < list.length; m++) {
+      var e = list[m];
+      html += '<div class="st-item"><div class="st-zh">' + esc(e.zh) + '</div>' +
+        '<div class="st-ce">中文语序：' + esc(e.chinglish) + '</div>' +
+        '<div class="st-en">标准英语：' + esc(e.standard) + '</div>' +
+        '<div class="st-note">' + esc(e.notes) + '</div></div>';
+    }
+    html += '</div>';
+  }
+  document.getElementById("stList").innerHTML = html;
+}
+
 function init() {
   renderStats();
   renderChinglish();
+  renderSentences();
   var hint = document.getElementById("hint");
   if (!D) { hint.textContent = "数据加载失败：请确认 data.js 与本页面在同一目录。"; return; }
   doSearch();
