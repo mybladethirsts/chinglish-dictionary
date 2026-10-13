@@ -1,0 +1,181 @@
+﻿id,zh,chinglish,standard,pattern,notes
+S001,昨天我们讨论过了，今天只是确认一下。,"Yesterday we discuss already, today we just confirm.",We already discussed it yesterday; today we're just confirming.,P01,The time word 'yesterday' opens the sentence and does the work of the past tense.
+S002,明天我去上海。,Tomorrow I go Shanghai.,I'll go to Shanghai tomorrow.,P01,"Time first; future is implied by 'tomorrow', and 'to' is dropped (see also P07)."
+S003,今天天气很好。,Today weather very good.,The weather is very good today.,P01,Time first; no copula (P03) and no article (P12).
+S004,昨晚我看电视了。,Last night I watch TV.,I watched TV last night.,P01,"Past tense carried by 'last night', not by the verb."
+S005,下个星期我们有会议。,Next week we have meeting.,We have a meeting next week.,P01,Time first; 'a' is dropped (P12).
+S006,我每天起得很早。,Every day I get up early.,I get up early every day.,P01,Chinese puts 'every day' at the front of the clause.
+S007,星期一我去办公室。,Monday I go to office.,I go to the office on Monday.,P01,The weekday leads; 'the' is dropped (P12).
+S008,昨天他买了一辆车。,Yesterday he buy a car.,He bought a car yesterday.,P01,"Past from 'yesterday', not from the verb form."
+S009,今天早上我吃了面包。,This morning I eat bread.,I had bread this morning.,P01,Time first; no tense change on the verb.
+S010,下班后我回家。,After work I go home.,"After work, I go home.",P01,This one actually matches English order — a happy overlap.
+S011,三天前她来到了这里。,Three days ago she come here.,She came here three days ago.,P01,Time phrase first; verb stays base form.
+S012,现在我没有时间。,Now I no have time.,I don't have time right now.,P01,"Time first, plus the no+verb negation pattern (P08)."
+S013,他昨天去上学了。,He go to school yesterday.,He went to school yesterday.,P02,'yesterday' marks the past; 'go' stays unchanged.
+S014,我已经吃了。,I already eat.,I've already eaten.,P02,'already' carries completion instead of have + past participle.
+S015,她上周来了。,She come last week.,She came last week.,P02,Time word marks the tense.
+S016,我们明天完成这项工作。,We finish this work tomorrow.,We'll finish this work tomorrow.,P02,"Future shown by 'tomorrow', not by 'will'."
+S017,我以前见过他。,I see him before.,I've seen him before.,P02,'before' implies the experience; no perfect tense needed.
+S018,他们昨晚到了。,They arrive yesterday night.,They arrived last night.,P02,'yesterday night' is a direct translation of 昨晚; English says 'last night'.
+S019,他说他要来。,He say he come.,He said he would come.,P02,No tense or modal marking; context does the work.
+S020,我在这里住了十年。,I live here ten years.,I've lived here for ten years.,P02,Duration with no perfect tense and no 'for'.
+S021,她已经回家了。,She already go home.,She's already gone home.,P02,'already' + base verb instead of present perfect.
+S022,我们上个月见过面。,We meet last month.,We met last month.,P02,Same pattern: the time word is the tense.
+S023,我刚刚做完作业。,I finish homework just now.,I just finished my homework.,P02,'just now' (刚刚) marks recent past.
+S024,他在这家公司工作五年了。,He work in this company five years.,He has worked at this company for five years.,P02,Duration phrase without 'for' or perfect tense.
+S025,这台机器很好。,This machine very good.,This machine is very good.,P03,The copula 'is' is simply absent; the adjective is the predicate.
+S026,我的英语不好。,My English not good.,My English is not good.,P03,No copula; negation with 'not' directly before the adjective.
+S027,她非常漂亮。,She very beautiful.,She is very beautiful.,P03,Copula dropped after the subject.
+S028,他今天很忙。,He very busy today.,He is very busy today.,P03,Adjective predicate; time word at the end.
+S029,这个食物很好吃。,The food delicious.,The food is delicious.,P03,No 'is' needed in Chinese thinking.
+S030,我饿了。,I hungry.,I'm hungry.,P03,Even 'I am' collapses to 'I' + adjective.
+S031,我们很开心。,We happy.,We are happy.,P03,Subject + adjective = complete statement.
+S032,这个价格太高了。,The price too high.,The price is too high.,P03,'too' + adjective without a copula.
+S033,他们生我的气。,They angry with me.,They are angry with me.,P03,Copula dropped; 'angry with' kept.
+S034,这个问题很严重。,This problem serious.,This problem is serious.,P03,Standard copula omission.
+S035,这个房间很干净。,The room clean.,The room is clean.,P03,"Adjective as predicate, no 'is'."
+S036,他生病了。,He sick.,He is sick.,P03,Same omission; 'sick' carries the state.
+S037,这个项目我们三家一起做。,This project we three companies together do.,Three companies are doing this project together.,P04,"Topic ('this project') is announced first, then the comment."
+S038,这个问题我没办法。,This problem I no solution.,I have no solution to this problem.,P04,"Topic first, then 'I have no solution'."
+S039,那个电影我看过。,That movie I seen.,I've seen that movie.,P04,Topic ('that movie') fronted; the verb stays short.
+S040,钱我不多。,Money I no much.,I don't have much money.,P04,Topic 'money' first; comment 'I no much'.
+S041,这本书我非常喜欢。,This book I very like.,I like this book very much.,P04,Object/topic fronted; adverb before verb.
+S042,会议明天早上我们开。,The meeting tomorrow morning we have.,We're having the meeting tomorrow morning.,P04,"Topic + time, then the comment."
+S043,这个食物我不吃。,This food I no eat.,I don't eat this food.,P04,Topic first; no+verb negation.
+S044,英语我说得不好。,English I no good speak.,I don't speak English well.,P04,Topic 'English' fronted; comment is the whole clause.
+S045,工作我们已经完成了。,The work we already finish.,We've already finished the work.,P04,Topic fronted; 'already' carries completion.
+S046,这个问题我问你。,This question I ask you.,I want to ask you this question.,P04,Topic + 'I ask you'; English needs more structure.
+S047,那个地方我们不去。,That place we no go.,We don't go to that place.,P04,Topic fronted; no+verb; no 'to'.
+S048,那辆车他昨天买的。,The car he buy yesterday.,He bought the car yesterday.,P04,"Topic fronted, then subject + verb + time."
+S049,去买点水。,Go buy some water.,Go and buy some water.,P05,Two verbs chain without 'and'.
+S050,我去看电影。,I go see movie.,I'm going to see a movie.,P05,'Go + see' chains directly; no article.
+S051,来吃晚饭。,Come eat dinner.,Come and have dinner.,P05,Imperative verb chain without 'and'.
+S052,他每天去游泳。,He go swim every day.,He goes swimming every day.,P05,'Go swim' instead of 'go swimming'.
+S053,我们去购物买衣服。,We go shopping buy clothes.,We went shopping to buy clothes.,P05,Purpose chains directly without 'to'.
+S054,她来帮我。,She come help me.,She came to help me.,P05,'Come + help' instead of 'came to help'.
+S055,我去问他。,I go ask him.,I'll go and ask him.,P05,"Two verbs, no connector."
+S056,你去看看。,You go check.,Go and check.,P05,Chained imperatives.
+S057,他们去打篮球。,They go play basketball.,They went to play basketball.,P05,'Go play' instead of 'went to play'.
+S058,我去看一看。,I go take a look.,I'll go take a look.,P05,This one actually works in casual English too.
+S059,来坐这里。,Come sit here.,Come and sit here.,P05,Imperative chain.
+S060,他去开门。,He go open the door.,He went to open the door.,P05,'Go open' instead of 'went to open'.
+S061,我要两片面包。,I want two piece bread.,I'd like two pieces of bread.,P06,"Measure word 'piece' carried over; no plural, no 'of'."
+S062,一杯水，谢谢。,A cup water please.,"A cup of water, please.",P06,'of' is dropped after the measure word.
+S063,三碗米饭。,Three bowl rice.,Three bowls of rice.,P06,"Measure word + noun, no plural or 'of'."
+S064,两张纸。,Two sheet paper.,Two sheets of paper.,P06,'sheet' doubles as the measure word.
+S065,一杯果汁。,One glass juice.,A glass of juice.,P06,Measure word without 'of'.
+S066,五瓶啤酒。,Five bottle beer.,Five bottles of beer.,P06,No plural on the measure word.
+S067,一双鞋。,A pair shoe.,A pair of shoes.,P06,"'pair' + noun, no plural."
+S068,两杯咖啡。,Two cup coffee.,Two cups of coffee.,P06,Same measure-word pattern.
+S069,一块蛋糕。,One piece cake.,One piece of cake.,P06,'piece' without 'of'.
+S070,三张票。,Three ticket.,Three tickets.,P06,"No measure word, no plural — just number + noun."
+S071,一群人。,A group people.,A group of people.,P06,"'group' + noun, no 'of'."
+S072,四瓶水。,Four bottle water.,Four bottles of water.,P06,Measure word carries the counting; noun unchanged.
+S073,我明天去北京。,I go Beijing tomorrow.,I'll go to Beijing tomorrow.,P07,'go' takes the city directly — no 'to'.
+S074,我住在广州。,I live Guangzhou.,I live in Guangzhou.,P07,"'live' + city, no 'in'."
+S075,他来自美国。,He come from USA.,He comes from the US.,P07,'from' kept; no article before USA.
+S076,我们在会上讨论了这个问题。,We discuss this problem on meeting.,We discussed this problem at the meeting.,P07,'on meeting' instead of 'at the meeting'.
+S077,我今天没去学校。,I no go school today.,I didn't go to school today.,P07,no+verb (P08); no 'to' before school.
+S078,她坐在椅子上。,She sit on chair.,She sat on the chair.,P07,No article before 'chair'.
+S079,周一我们有会议。,On Monday we have meeting.,We have a meeting on Monday.,P07,Time first with 'on'; no article.
+S080,我在门口等你。,I wait you at door.,I'll wait for you at the door.,P07,'wait you' instead of 'wait for you'.
+S081,他开车去上班。,He go to work by car.,He goes to work by car.,P07,'by car' actually matches English here.
+S082,书在桌子上。,The book on table.,The book is on the table.,P07,No copula + no article.
+S083,我到家了。,I arrive at home.,I've arrived home.,P07,'arrive at home' instead of 'arrived home'.
+S084,我们打电话聊了。,We talk on phone.,We talked on the phone.,P07,'on phone' without 'the'.
+S085,我不知道。,I no know.,I don't know.,P08,The classic: 'no' directly before the verb.
+S086,他没来。,He no come.,He didn't come.,P08,Negation without 'didn't'.
+S087,我们没有钱。,We no have money.,We don't have money.,P08,no + have.
+S088,她不喜欢咖啡。,She no like coffee.,She doesn't like coffee.,P08,no + like.
+S089,我不想去。,I no want go.,I don't want to go.,P08,"no + want + go, no 'to'."
+S090,他们不同意。,They no agree.,They don't agree.,P08,no + agree.
+S091,你别担心。,You no worry.,Don't worry.,P08,Imperative negation with 'no'.
+S092,我不明白。,I no understand.,I don't understand.,P08,no + understand.
+S093,他不吃肉。,He no eat meat.,He doesn't eat meat.,P08,no + eat.
+S094,我们没看见他。,We no see him.,We didn't see him.,P08,no + see.
+S095,我不喜欢这个。,I no like this.,I don't like this.,P08,no + like + this.
+S096,她没告诉我。,She no tell me.,She didn't tell me.,P08,no + tell.
+S097,我也要买一个。,I also want buy one.,I also want to buy one.,P09,'also' before the verb; 'to' dropped after want.
+S098,我们都去。,We all go.,We all went.,P09,"'all' before the verb, as in Chinese."
+S099,他还没来。,He still no come.,He still hasn't come.,P09,'still + no' matches Chinese 还没.
+S100,我就想看看。,I just want see.,I just want to look.,P09,'just' in place; 'want see' chains (P05).
+S101,她也来。,She also come.,She's coming too.,P09,'also' before the verb; 'too' at the end is the English habit.
+S102,他们都同意。,They all agree.,They all agreed.,P09,'all' before the verb.
+S103,我非常喜欢它。,I very much like it.,I like it very much.,P09,"Intensifier before the verb, as in Chinese."
+S104,他经常不来。,He often no come.,He often doesn't come.,P09,Frequency adverb + no + verb.
+S105,我们已经讨论过了。,We already discuss.,We've already discussed it.,P09,'already' before the verb; completion via adverb (P13).
+S106,我只要水。,I only want water.,I only want water.,P09,'only' works the same in both languages here.
+S107,你先走。,You first go.,You go first.,P09,'first' before the verb in Chinese order.
+S108,我也不知道。,I also no know.,I don't know either.,P09,'also no' = 也不; English uses 'either' at the end.
+S109,因为我生病了，所以没来。,"Because I sick, so I no come.",I didn't come because I was sick.,P10,Chinese keeps both 'because' and 'so'; English uses one or the other.
+S110,因为下雨，所以我们没去。,"Because rain, so we no go.",We didn't go because of the rain.,P10,Both connectives present.
+S111,因为没钱，所以我没买。,"Because no money, so I no buy.",I didn't buy it because I had no money.,P10,Double connective + no+verb.
+S112,因为忙，所以我没回。,"Because busy, so I no reply.",I didn't reply because I was busy.,P10,"Because + adjective, then so."
+S113,因为累了，所以我很早睡。,"Because tired, so I sleep early.",I went to bed early because I was tired.,P10,Double connective; no copula.
+S114,因为贵，所以我不买。,"Because expensive, so I no buy.",I won't buy it because it's too expensive.,P10,Because + adjective; so + no + verb.
+S115,因为他帮了我，所以我谢谢他。,"Because he help me, so I thank him.",I thanked him because he helped me.,P10,Both connectives; no tense marking.
+S116,因为没时间，所以我们没完成。,"Because no time, so we no finish.",We didn't finish because there was no time.,P10,Double connective.
+S117,因为晚了，所以我不等了。,"Because late, so I no wait.",I didn't wait because it was late.,P10,Because + adjective + so.
+S118,因为冷，所以我多穿点衣服。,"Because cold, so I wear more clothes.",I wore more clothes because it was cold.,P10,Double connective.
+S119,因为她没来，所以我们等着。,"Because she no come, so we wait.",We waited because she hadn't come.,P10,Both connectives; no+verb in the clause.
+S120,因为没有公交车，所以我走路。,"Because no bus, so I walk.",I walked because there was no bus.,P10,"Because + no + noun, then so."
+S121,我有两本书。,I have two book.,I have two books.,P11,"Number + noun, no plural -s."
+S122,他买了三个苹果。,He buy three apple.,He bought three apples.,P11,No plural; no tense change.
+S123,很多学生来了。,Many student come.,Many students came.,P11,'many' + singular noun.
+S124,我看见两只狗。,I see two dog.,I saw two dogs.,P11,"Number + noun, no -s."
+S125,有五个孩子。,There are five child.,There are five children.,P11,Even irregular plurals flatten to the base form.
+S126,我们需要更多工人。,We need more worker.,We need more workers.,P11,'more' + singular noun.
+S127,她有很多朋友。,She have many friend.,She has many friends.,P11,No plural; subject-verb agreement also flattens.
+S128,他们有三台电脑。,They have three computer.,They have three computers.,P11,Number + noun.
+S129,我要两个鸡蛋。,I want two egg.,I want two eggs.,P11,"Number + noun, no -s."
+S130,这家公司有 100 名员工。,The company has 100 employee.,The company has 100 employees.,P11,Number + noun.
+S131,我们吃了两根香蕉。,We eat two banana.,We ate two bananas.,P11,No plural; tense from context.
+S132,他有四个兄弟。,He has four brother.,He has four brothers.,P11,Number + noun.
+S133,他是老师。,He is teacher.,He is a teacher.,P12,The indefinite article is absent.
+S134,她是医生。,She is doctor.,She is a doctor.,P12,No 'a' before the profession.
+S135,我买了一辆车。,I buy car.,I bought a car.,P12,No article; tense via context.
+S136,他是个好学生。,He is good student.,He is a good student.,P12,Adjective + noun without an article.
+S137,我们有个会议。,We have meeting.,We have a meeting.,P12,No article.
+S138,狗是动物。,Dog is animal.,A dog is an animal.,P12,Both articles dropped.
+S139,我要一个苹果。,I want apple.,I want an apple.,P12,No article.
+S140,她给了我一本书。,She give me book.,She gave me a book.,P12,No article; no tense change.
+S141,他是工程师。,He is engineer.,He is an engineer.,P12,No 'an'.
+S142,我昨晚看了一部电影。,I see movie last night.,I saw a movie last night.,P12,No article; time word marks the past.
+S143,这是一辆新车。,This is new car.,This is a new car.,P12,No article before the noun phrase.
+S144,她有一个好主意。,She has good idea.,She has a good idea.,P12,No article.
+S145,我已经做完工作了。,I finish work already.,I've already finished the work.,P13,'already' after the verb instead of have + past participle.
+S146,他回家了。,He gone home.,He's gone home.,P13,"Past participle used alone, no auxiliary."
+S147,我们做完了。,We done.,We're done.,P13,'done' carries completion with no auxiliary.
+S148,她已经走了。,She left already.,She's already left.,P13,Past verb + 'already' at the end.
+S149,我已经买了。,I buy it already.,I've already bought it.,P13,Base verb + 'already' instead of perfect tense.
+S150,他们完成了。,They finish already.,They've finished.,P13,'already' marks completion.
+S151,会议结束了。,The meeting over.,The meeting is over.,P13,"'over' as the predicate, no copula."
+S152,我已经看过了。,I seen it already.,I've already seen it.,P13,Past participle without auxiliary.
+S153,他已经告诉我了。,He tell me already.,He's already told me.,P13,Base verb + 'already'.
+S154,我们吃过了。,We eat already.,We've eaten.,P13,'already' instead of present perfect.
+S155,她已经来了。,She come already.,She's already here.,P13,'come already' marks arrival completion.
+S156,我已经知道了。,I know already.,I already know.,P13,'already' after the verb — the mirror of English.
+S157,我觉得你可以试试。,I think you can try.,Maybe you could try.,P14,Chinese softens with 'I think'; English prefers 'maybe/could'.
+S158,你不要担心。,You should no worry.,You shouldn't worry.,P14,Modal + no + verb instead of 'shouldn't'.
+S159,我想问你一件事。,I want ask you one thing.,I'd like to ask you something.,P14,'want ask' chains; 'one thing' is a direct translation.
+S160,我们不能这样做。,We can no do this.,We can't do this.,P14,'can no' instead of 'can't'.
+S161,你不能在这里抽烟。,You can no smoke here.,You can't smoke here.,P14,'can no smoke' instead of 'can't smoke'.
+S162,我建议不去。,I suggest no go.,I suggest we don't go.,P14,'suggest no go' — the object is a bare verb.
+S163,你应当更小心。,You should more careful.,You should be more careful.,P14,"Modal + adverb + adjective, no copula."
+S164,也许我们不需要。,Maybe we no need.,Maybe we don't need it.,P14,'maybe' + no + verb.
+S165,我不确定。,I no sure.,I'm not sure.,P14,no + adjective instead of 'am not'.
+S166,你千万别忘了。,You must no forget.,You mustn't forget.,P14,'must no' instead of 'mustn't'.
+S167,请不要碰。,Please no touch.,Please don't touch.,P14,'please no touch' — imperative negation.
+S168,我们应该一起去。,We should together go.,We should go together.,P14,"'together' before the verb, as in Chinese."
+S169,这个很好啊。,This is very good ah.,This is really good!,P15,The particle '啊' (ah) adds emphasis at the end.
+S170,我们走吧。,Let's go ba.,Let's go.,P15,'吧' (ba) is a suggestion particle — nothing in English.
+S171,你想要什么呢？,What do you want ne?,What do you want?,P15,'呢' (ne) softens a question; often dropped in English.
+S172,他就是不来嘛。,He just no come ma.,He just won't come.,P15,'嘛' (ma) states the obvious.
+S173,没关系啦。,That's OK la.,That's fine.,P15,"'啦' (la) — casual, Cantonese-flavoured particle."
+S174,我跟你说过了啊。,I told you already a.,I already told you!,P15,'啊' (a) marks impatience or reminder.
+S175,来吧。,Come on la.,Come on.,P15,Encouragement + particle.
+S176,你知道嘛，我英语不好。,"You know ma, I no good English.","You know, my English isn't great.",P15,'嘛' mid-sentence softens the topic.
+S177,好累啊。,Very tired a.,I'm so tired.,P15,"No subject, no copula, trailing 'a'."
+S178,等一下吧。,Wait a moment ba.,Wait a moment.,P15,Suggestion particle at the end.
+S179,没问题啦。,No problem la.,No problem.,P15,Casual closing particle.
+S180,这个挺贵呢。,This one expensive ne.,This one is rather pricey.,P15,'呢' (ne) adds a knowing tone; no copula either.
